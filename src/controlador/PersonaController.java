@@ -63,6 +63,10 @@ public class PersonaController {
             return;
         }
 
+        if (!vista.confirmarEliminacion()) {
+            return;
+        }
+
         repository.eliminar(id);
         vista.limpiarFormulario();
         refrescarTabla();
