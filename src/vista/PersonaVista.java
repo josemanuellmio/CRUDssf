@@ -164,6 +164,17 @@ public class PersonaVista extends JFrame {
         JOptionPane.showMessageDialog(this, mensaje);
     }
 
+    public boolean confirmarEliminacion() {
+        int respuesta = JOptionPane.showConfirmDialog(
+                this,
+                "¿Seguro que quieres eliminar la persona seleccionada?",
+                "Confirmar eliminacion",
+                JOptionPane.YES_NO_OPTION
+        );
+
+        return respuesta == JOptionPane.YES_OPTION;
+    }
+
     public void iniciar() {
         SwingUtilities.invokeLater(() -> setVisible(true));
     }
