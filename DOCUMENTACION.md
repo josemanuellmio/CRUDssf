@@ -23,7 +23,25 @@ Ademas, el proyecto sirve para practicar un flujo de trabajo profesional:
 - Publicacion de la documentacion en GitBook.
 - Gestion de ramas con GitFlow.
 
-## 3. Herramientas utilizadas
+## 3. Integrantes del grupo
+
+Los integrantes del grupo son:
+
+- Jose Manuel
+- Samara
+- Handrup
+- Fernando
+
+## 4. Reparto de tareas
+
+| Integrante | Aportacion principal |
+| --- | --- |
+| Jose Manuel | Organizacion del repositorio, gestion de ramas con GitFlow y documentacion en GitBook. |
+| Samara | Desarrollo y revision del modelo, incluyendo la clase `Persona` y el repositorio de datos. |
+| Handrup | Desarrollo y revision de la vista Swing, incluyendo la tabla, el formulario y los botones. |
+| Fernando | Desarrollo y revision del controlador, conexion del CRUD y pruebas manuales de funcionamiento. |
+
+## 5. Herramientas utilizadas
 
 | Herramienta | Uso en el proyecto |
 | --- | --- |
@@ -36,7 +54,7 @@ Ademas, el proyecto sirve para practicar un flujo de trabajo profesional:
 | GitBook | Plataforma usada para publicar la documentacion del proyecto. |
 | GitFlow | Metodologia de ramas usada para separar desarrollo, funcionalidades y correcciones. |
 
-## 4. Estructura del repositorio
+## 6. Estructura del repositorio
 
 La estructura principal del proyecto es:
 
@@ -66,11 +84,11 @@ Cada carpeta tiene una responsabilidad concreta:
 - `DOCUMENTACION.md`: documentacion completa para GitBook.
 - `SUMMARY.md`: indice de navegacion usado por GitBook.
 
-## 5. Aplicacion de la metodologia MVC
+## 7. Aplicacion de la metodologia MVC
 
 MVC separa una aplicacion en tres partes. Esta separacion ayuda a que el codigo sea mas facil de entender, mantener y ampliar.
 
-### 5.1 Modelo
+### 7.1 Modelo
 
 El modelo esta en el paquete `modelo`.
 
@@ -101,7 +119,7 @@ Sus operaciones principales son:
 
 Al guardar los datos en memoria, la informacion se pierde al cerrar la aplicacion. Para una practica de CRUD esto es suficiente, porque permite centrarse en la arquitectura MVC y en el flujo de trabajo con Git.
 
-### 5.2 Vista
+### 7.2 Vista
 
 La vista esta en el paquete `vista`.
 
@@ -115,7 +133,7 @@ La clase `PersonaVista` extiende de `JFrame` y construye la ventana principal de
 
 La vista no modifica directamente los datos. Su responsabilidad es mostrar informacion, recoger datos del formulario y exponer metodos para que el controlador pueda interactuar con ella.
 
-### 5.3 Controlador
+### 7.3 Controlador
 
 El controlador esta en el paquete `controlador`.
 
@@ -131,7 +149,7 @@ La clase `PersonaController` conecta la vista con el repositorio. Sus responsabi
 
 El controlador evita que la vista tenga logica de negocio y evita que el modelo dependa de la interfaz grafica.
 
-## 6. Funcionamiento del CRUD
+## 8. Funcionamiento del CRUD
 
 CRUD significa:
 
@@ -142,7 +160,7 @@ CRUD significa:
 
 En este proyecto, cada operacion se reparte entre vista, controlador y modelo.
 
-### 6.1 Crear una persona
+### 8.1 Crear una persona
 
 1. El usuario escribe nombre, email y telefono.
 2. Pulsa el boton `Crear`.
@@ -151,13 +169,13 @@ En este proyecto, cada operacion se reparte entre vista, controlador y modelo.
 5. `PersonaRepository` crea la persona, asigna un id y la guarda en la lista.
 6. La vista limpia el formulario y refresca la tabla.
 
-### 6.2 Leer personas
+### 8.2 Leer personas
 
 1. Al iniciar la aplicacion, `PersonaController` llama a `refrescarTabla()`.
 2. El controlador obtiene las personas con `repository.obtenerTodas()`.
 3. La vista muestra los datos en la tabla usando `mostrarPersonas(...)`.
 
-### 6.3 Actualizar una persona
+### 8.3 Actualizar una persona
 
 1. El usuario selecciona una fila de la tabla.
 2. La vista carga los datos en el formulario.
@@ -167,7 +185,7 @@ En este proyecto, cada operacion se reparte entre vista, controlador y modelo.
 6. El controlador llama a `repository.actualizar(...)`.
 7. La tabla se refresca con los datos actualizados.
 
-### 6.4 Eliminar una persona
+### 8.4 Eliminar una persona
 
 1. El usuario selecciona una persona de la tabla.
 2. Pulsa el boton `Eliminar`.
@@ -176,7 +194,7 @@ En este proyecto, cada operacion se reparte entre vista, controlador y modelo.
 5. Si el usuario confirma, el controlador llama a `repository.eliminar(id)`.
 6. La tabla se actualiza y el formulario se limpia.
 
-## 7. Flujo general de la aplicacion
+## 9. Flujo general de la aplicacion
 
 El flujo de ejecucion es:
 
@@ -200,15 +218,15 @@ Usuario
 
 Esta organizacion permite que cada clase tenga una funcion clara.
 
-## 8. Planificacion con Taiga
+## 10. Planificacion con Taiga
 
 Taiga se utiliza para organizar el trabajo antes y durante el desarrollo. Una forma sencilla de estructurar el proyecto en Taiga es la siguiente:
 
-### 8.1 Epica
+### 10.1 Epica
 
 `Desarrollar CRUD de personas con arquitectura MVC`
 
-### 8.2 Historias de usuario
+### 10.2 Historias de usuario
 
 | Historia | Descripcion |
 | --- | --- |
@@ -219,7 +237,7 @@ Taiga se utiliza para organizar el trabajo antes y durante el desarrollo. Una fo
 | Confirmar eliminacion | Como usuario, quiero confirmar antes de eliminar una persona para evitar borrados accidentales. |
 | Documentar el proyecto | Como estudiante, quiero explicar el proceso en GitBook para presentar el trabajo. |
 
-### 8.3 Tareas tecnicas
+### 10.3 Tareas tecnicas
 
 - Crear estructura de paquetes `modelo`, `vista` y `controlador`.
 - Implementar clase `Persona`.
@@ -231,7 +249,7 @@ Taiga se utiliza para organizar el trabajo antes y durante el desarrollo. Una fo
 - Subir el repositorio a GitHub.
 - Publicar la documentacion en GitBook.
 
-### 8.4 Seguimiento en tablero
+### 10.4 Seguimiento en tablero
 
 En Taiga, las tareas pueden pasar por columnas como:
 
@@ -243,7 +261,7 @@ En Taiga, las tareas pueden pasar por columnas como:
 
 Este seguimiento ayuda a ver el estado real del trabajo y a relacionar cada cambio del repositorio con una tarea concreta.
 
-## 9. Gestion del repositorio con GitFlow
+## 11. Gestion del repositorio con GitFlow
 
 GitFlow permite separar el codigo estable, el desarrollo y los cambios especificos. En este repositorio se han usado las siguientes ramas:
 
@@ -254,7 +272,7 @@ GitFlow permite separar el codigo estable, el desarrollo y los cambios especific
 | `feature` | Rama usada para desarrollar la funcionalidad principal del CRUD. |
 | `fix` | Rama usada para corregir o mejorar una funcionalidad concreta, como la confirmacion al eliminar. |
 
-### 9.1 Flujo usado
+### 11.1 Flujo usado
 
 El flujo de trabajo seguido es:
 
@@ -268,7 +286,7 @@ El flujo de trabajo seguido es:
 8. Pasar la version final a `main`.
 9. Subir todas las ramas a GitHub.
 
-### 9.2 Comandos Git utiles
+### 11.2 Comandos Git utiles
 
 Crear y moverse a una rama:
 
@@ -304,7 +322,7 @@ git merge developer
 git push origin main
 ```
 
-## 10. Uso de GitHub
+## 12. Uso de GitHub
 
 GitHub se utiliza como repositorio remoto del proyecto. Al estar subido el repositorio completo, permite:
 
@@ -322,7 +340,7 @@ Para que el repositorio sea claro, es recomendable mantener:
 - Commits con mensajes concretos.
 - Ramas subidas al remoto.
 
-## 11. Documentacion con Markdown
+## 13. Documentacion con Markdown
 
 Markdown es el formato usado para escribir la documentacion. Permite crear titulos, listas, tablas y bloques de codigo de forma sencilla.
 
@@ -366,7 +384,7 @@ public class Main {
 
 Usar Markdown facilita que la misma documentacion pueda verse correctamente en GitHub y en GitBook.
 
-## 12. Publicacion en GitBook
+## 14. Publicacion en GitBook
 
 Para publicar esta documentacion en GitBook desde GitHub:
 
@@ -390,7 +408,7 @@ El archivo `SUMMARY.md` define la navegacion principal:
 
 Cada vez que se actualice la documentacion en GitHub, GitBook puede sincronizar los cambios si la integracion esta activada.
 
-## 13. Como ejecutar la aplicacion
+## 15. Como ejecutar la aplicacion
 
 Desde la raiz del proyecto, compilar:
 
@@ -406,7 +424,7 @@ java -cp out Main
 
 Tambien se puede abrir el proyecto con IntelliJ IDEA y ejecutar la clase `Main`.
 
-## 14. Pruebas manuales del CRUD
+## 16. Pruebas manuales del CRUD
 
 Para comprobar que la aplicacion funciona correctamente:
 
@@ -427,7 +445,7 @@ Para comprobar que la aplicacion funciona correctamente:
 
 Si todos estos pasos funcionan, el CRUD esta correctamente implementado.
 
-## 15. Conclusiones
+## 17. Conclusiones
 
 El proyecto demuestra como construir un CRUD sencillo aplicando MVC. La separacion entre modelo, vista y controlador permite mantener el codigo organizado:
 
